@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Constellation of Love</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div id="welcome-page" class="container welcome-container">
+        <div class="welcome-content constellation-content">
+            <h1>Welcome to Our Constellation</h1>
+            <p>Just like stars, our moments together light up my universe. Ready to explore our journey?</p>
+            <div class="welcome-buttons">
+                <button id="yes-button">Yes, ignite the stars</button>
+                <button id="no-button">No, maybe later</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="date-popup" class="popup">
+        <div class="popup-content constellation-popup">
+            <h2>Unlock Our Universe</h2>
+            <p>Enter the date our stars aligned:</p>
+            <input type="date" id="anniversary-date-input">
+            <button id="submit-date-button">Unlock</button>
+            <p id="date-error" class="error-message"></p>
+        </div>
+    </div>
+
+    <div id="anniversary-page" class="container hidden anniversary-container">
+        <header class="constellation-header">
+            <div id="relationship-timer">
+                <i class="fa-solid fa-star"></i> <span id="timer"></span> <i class="fa-solid fa-star"></i>
+            </div>
+        </header>
+
+        <main class="constellation-main">
+            <section id="wish-section" class="constellation-section">
+                <h2>To My Guiding Star, [Girlfriend's Name]</h2>
+                <p> [Your Updated Anniversary Wish Message Here - perhaps themed around stars, constellations, or the universe] </p>
+            </section>
+
+            <section id="timeline-section" class="constellation-section">
+                <h2>Cosmic Milestones</h2>
+                <div class="timeline constellation-timeline">
+                    <div class="timeline-event">
+                        <h3>[Date or Year] - Celestial Beginning</h3>
+                        <p>[Description of the event or achievement in your relationship -  make it sound a bit more poetic or themed]</p>
+                    </div>
+                    <div class="timeline-event">
+                        <h3>[Date or Year] -  Orbiting Closer</h3>
+                        <p>[Description of another event - themed description]</p>
+                    </div>
+                    </div>
+            </section>
+
+            <section id="photo-gallery-button-section" class="constellation-section">
+                <a href="gallery.html" class="button constellation-button">Explore Our Galaxy of Memories <i class="fa-solid fa-image-star"></i></a>
+            </section>
+        </main>
+
+        <footer class="constellation-footer">
+            <p>&copy; [Year]  [Your Name].  Reaching for the stars together. <i class="fa-solid fa-star" style="color: #ffc107;"></i></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

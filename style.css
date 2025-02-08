@@ -1,0 +1,327 @@
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #03071e; /* Dark, deep space background */
+    color: #eee; /* Light text for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scroll for animations */
+    position: relative; /* For star background positioning */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('images/star-background.png'); /* Replace with your star background image */
+    background-size: cover;
+    opacity: 0.6; /* Subtle star background */
+    pointer-events: none; /* Prevent interaction */
+    animation: pan 60s linear infinite; /* Subtle panning animation for stars */
+}
+
+@keyframes pan {
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1; /* Content above background */
+}
+
+.welcome-container, .anniversary-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Center welcome/anniversary page vertically */
+}
+
+
+.welcome-content, .popup-content, .constellation-content, .constellation-popup {
+    background-color: rgba(20, 25, 40, 0.85); /* Darker, semi-transparent content box */
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+h1, h2 {
+    color: #ffc107; /* Gold/Yellow star color for headings */
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    font-family: 'Georgia', serif; /* More elegant font */
+    letter-spacing: 0.8px;
+}
+
+p {
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: #ddd; /* Slightly softer white for paragraphs */
+    font-size: 1.1rem;
+}
+
+.welcome-buttons button, #submit-date-button, .button, .constellation-button {
+    background-color: #ffc107; /* Gold/Yellow button color */
+    color: #03071e; /* Dark text on buttons */
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 8px 15px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.welcome-buttons button:hover, #submit-date-button:hover, .button:hover, .constellation-button:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Date Popup Styles - Constellation Theme */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Optional blur effect */
+}
+
+.popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 500px; /* Slightly wider popup */
+}
+
+#anniversary-date-input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 25px;
+    width: calc(100% - 24px);
+    background-color: rgba(255, 255, 255, 0.05); /* Dark input background */
+    color: #eee;
+    font-size: 1rem;
+}
+
+#anniversary-date-input:focus {
+    outline: none;
+    border-color: #ffc107; /* Highlight on focus */
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+}
+
+
+.error-message {
+    color: #f44336; /* Red error color */
+    margin-top: -15px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Anniversary Page Styles - Constellation Theme */
+header.constellation-header {
+    background-color: rgba(20, 25, 40, 0.9); /* Slightly more opaque header */
+    padding: 30px 0;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    overflow: hidden; /* Clip shape divider */
+}
+
+
+header.constellation-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; /* Adjust to control wave height */
+    left: 0;
+    right: 0;
+    height: 30px; /* Wave height */
+    background: url('images/wave-divider.svg') repeat-x bottom; /* Replace with your wave SVG */
+    background-size: 100% auto;
+}
+
+
+#relationship-timer {
+    font-size: 1.8rem;
+    color: #ffc107;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    animation: pulse-star 2s infinite alternate; /* Pulsing star animation */
+}
+
+#relationship-timer i {
+    margin: 0 15px;
+    color: #ffeb3b; /* Lighter star color */
+}
+
+@keyframes pulse-star {
+    0% { transform: scale(1); opacity: 0.9; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+
+main.constellation-main {
+    padding: 40px;
+    background-color: rgba(20, 25, 40, 0.75); /* Even more transparent main content */
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative; /* For section dividers */
+    overflow: hidden; /* Clip bottom shape divider */
+}
+
+
+main.constellation-main::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; /* Adjust to control wave height */
+    left: 0;
+    right: 0;
+    height: 30px; /* Wave height */
+    background: url('images/wave-divider-bottom.svg') repeat-x top; /* Different wave for bottom */
+    background-size: 100% auto;
+    transform: scaleY(-1); /* Flip wave for bottom */
+}
+
+
+section.constellation-section {
+    margin-bottom: 50px;
+    padding: 40px;
+    background-color: rgba(25, 30, 50, 0.9); /* Slightly darker sections */
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle section border */
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+section.constellation-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+#timeline-section .timeline.constellation-timeline {
+    position: relative;
+    padding: 30px 0;
+}
+
+#timeline-section .timeline.constellation-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #777, rgba(255,255,255,0)); /* Gradient timeline line */
+    opacity: 0.7;
+}
+
+.timeline-event {
+    margin-bottom: 35px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animate timeline items */
+}
+
+.timeline-event.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.timeline-event h3 {
+    margin-bottom: 15px;
+    color: #ffc107;
+    font-size: 1.3rem;
+}
+
+.timeline-event p {
+    margin-left: 60px;
+    font-size: 1.05rem;
+    color: #ddd;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 8px);
+    width: 16px;
+    height: 16px;
+    background-color: #ffc107; /* Gold star circle */
+    border: 3px solid rgba(255, 255, 255, 0.4); /* White border */
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.6); /* Star glow */
+}
+
+
+footer.constellation-footer {
+    text-align: center;
+    padding: 25px;
+    color: #bbb;
+    font-size: 0.95rem;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle footer border */
+}
+
+/* Utility classes - No changes needed, but keep them */
+.hidden {
+    display: none !important;
+}
+
+
+/* Responsive Design - Constellation Theme */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    .welcome-content, .popup-content, .constellation-content, .constellation-popup {
+        padding: 40px;
+        border-radius: 15px;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.05rem;
+    }
+    #relationship-timer {
+        font-size: 1.5rem;
+    }
+    .timeline-event p {
+        margin-left: 50px;
+    }
+    header.constellation-header::after, main.constellation-main::after {
+        bottom: -20px;
+        height: 20px; /* Adjust wave height for smaller screens */
+    }
+}

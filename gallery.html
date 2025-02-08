@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy of Memories</title>
+    <link rel="stylesheet" href="gallery_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="gallery-header">
+        <h1>Our Galaxy of Memories</h1>
+    </header>
+
+    <main class="gallery-main">
+        <section id="filter-section" class="gallery-filter-section">
+            <button class="filter-button active constellation-button" data-year="all">All Moments</button>
+            <button class="filter-button constellation-button" data-year="2023">Starlight Year '23</button>
+            <button class="filter-button constellation-button" data-year="2024">Cosmic Year '24</button>
+            </section>
+
+        <section id="gallery-section" class="constellation-gallery-section">
+            <div class="photo-grid constellation-photo-grid">
+                <div class="photo-item" data-year="2023">
+                    <img src="images/2023/photo1.jpg" alt="Photo 1 from 2023">
+                </div>
+                <div class="photo-item" data-year="2024">
+                    <img src="images/2024/photo2.jpg" alt="Photo 2 from 2024">
+                </div>
+                </div>
+        </section>
+
+        <section id="back-button-section" class="gallery-back-button-section">
+            <a href="index.html" class="button constellation-button"><i class="fa-solid fa-arrow-left"></i> Return to Constellation</a>
+        </section>
+    </main>
+
+    <footer class="gallery-footer">
+        <p>&copy; [Year] [Your Name].  Memories shining brighter than any star. <i class="fa-solid fa-star" style="color: #ffc107;"></i></p>
+    </footer>
+
+    <script src="gallery_script.js"></script>
+</body>
+</html>
