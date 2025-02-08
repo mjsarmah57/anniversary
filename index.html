@@ -3,70 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Constellation of Love</title>
+    <title>Our Everlasting Love Story</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <div id="welcome-page" class="container welcome-container">
-        <div class="welcome-content constellation-content">
-            <h1>Welcome to Our Constellation</h1>
-            <p>Just like stars, our moments together light up my universe. Ready to explore our journey?</p>
-            <div class="welcome-buttons">
-                <button id="yes-button">Yes, ignite the stars</button>
-                <button id="no-button">No, maybe later</button>
-            </div>
+<div id="welcome-page" class="welcome-container">
+    <div class="welcome-overlay"></div>
+    <div class="welcome-content">
+        <h1 class="welcome-title">To My Beloved</h1>
+        <p class="welcome-text">Shall we journey through our memories?</p>
+        <div class="welcome-buttons">
+            <button id="enter-yes" class="btn">Yes, My Heart!</button>
+            <button id="enter-no" class="btn">Perhaps Later</button>
         </div>
     </div>
+     <div class="confetti-container"></div>
+    <div class="starry-bg"></div>
+</div>
 
-    <div id="date-popup" class="popup">
-        <div class="popup-content constellation-popup">
-            <h2>Unlock Our Universe</h2>
-            <p>Enter the date our stars aligned:</p>
-            <input type="date" id="anniversary-date-input">
-            <button id="submit-date-button">Unlock</button>
-            <p id="date-error" class="error-message"></p>
-        </div>
+<div id="date-popup" class="popup">
+    <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <h2>The Day Our Stars Aligned</h2>
+        <p>Whisper our anniversary date (DD/MM/YYYY):</p>
+        <input type="text" id="anniversary-date-input" placeholder="DD/MM/YYYY" class="date-input">
+        <button id="submit-date" class="btn">Enter Our World</button>
+        <p id="date-error-message" style="color: #ff6b6b; display: none;">Not quite, my love. Let's try again.</p>
     </div>
+</div>
 
-    <div id="anniversary-page" class="container hidden anniversary-container">
-        <header class="constellation-header">
-            <div id="relationship-timer">
-                <i class="fa-solid fa-star"></i> <span id="timer"></span> <i class="fa-solid fa-star"></i>
+<div id="anniversary-page" class="main-page" style="display: none;">
+    <div class="starry-bg"></div>
+    <header class = "page-header">
+        <h1 id="relationship-timer" class="timer">Our Time Together:</h1>
+    </header>
+
+    <section class="anniversary-message">
+        <h2>Happy Anniversary, My Dearest!</h2>
+        <p>Every beat of my heart echoes your name.  Thank you for filling my life with love, laughter, and endless joy.  Here's to our forever.</p>
+        <div class="hearts-container"></div>
+    </section>
+
+    <section class="timeline">
+        <h2>Chapters of Our Love Story</h2>
+        <div class="timeline-container">
             </div>
-        </header>
+    </section>
 
-        <main class="constellation-main">
-            <section id="wish-section" class="constellation-section">
-                <h2>To My Guiding Star, [Girlfriend's Name]</h2>
-                <p> [Your Updated Anniversary Wish Message Here - perhaps themed around stars, constellations, or the universe] </p>
-            </section>
+    <section class="photo-gallery-link">
+        <button id="view-gallery-button" class="btn">Relive Our Moments</button>
+    </section>
 
-            <section id="timeline-section" class="constellation-section">
-                <h2>Cosmic Milestones</h2>
-                <div class="timeline constellation-timeline">
-                    <div class="timeline-event">
-                        <h3>[Date or Year] - Celestial Beginning</h3>
-                        <p>[Description of the event or achievement in your relationship -  make it sound a bit more poetic or themed]</p>
-                    </div>
-                    <div class="timeline-event">
-                        <h3>[Date or Year] -  Orbiting Closer</h3>
-                        <p>[Description of another event - themed description]</p>
-                    </div>
-                    </div>
-            </section>
+    <footer>
+       <p>&copy; 2024 Crafted with infinite love <span class="animated-heart">&hearts;</span></p>
+    </footer>
+</div>
 
-            <section id="photo-gallery-button-section" class="constellation-section">
-                <a href="gallery.html" class="button constellation-button">Explore Our Galaxy of Memories <i class="fa-solid fa-image-star"></i></a>
-            </section>
+<div id="photo-gallery" class="gallery-page" style="display: none;">
+   <div class="starry-bg"></div>
+    <header class = "page-header">
+        <h1>Glimpses of Our Eternity</h1>
+         <div class="filter-buttons">
+
+        </div>
+    </header>
+
+
+    <main class="gallery-grid">
         </main>
 
-        <footer class="constellation-footer">
-            <p>&copy; [Year]  [Your Name].  Reaching for the stars together. <i class="fa-solid fa-star" style="color: #ffc107;"></i></p>
-        </footer>
-    </div>
+    <button id="back-to-anniversary" class="btn back-btn">Return to Our Story</button>
 
-    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2024 Crafted with infinite love <span class="animated-heart">&hearts;</span></p>
+    </footer>
+</div>
+<audio id="bg-music" loop>
+  <source src="romantic-music.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+<script src="script.js"></script>
+
 </body>
 </html>
